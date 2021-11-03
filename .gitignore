@@ -6,3 +6,6 @@ requests.http
 #Client
 /client/.env
 /client/node_modules
+
+#misc
+.DS_Store
