@@ -1,2 +1,8 @@
+#Server
 /server/node_modules
 /server/.env
+requests.http
+
+#Client
+/client/.env
+/client/node_modules

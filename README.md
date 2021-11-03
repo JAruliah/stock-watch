@@ -38,8 +38,8 @@ npm start
 ## Things to do
 - [x] Setup project
 - [x] Initialize and connect database
-- [ ] Create register route
-- [ ] Create register front end
+- [x] Create register route
+- [x] Create register front end
 - [ ] Create login route
 - [ ] Create login front end
 - [ ] Create front page, with api fetches
