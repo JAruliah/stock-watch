@@ -36,8 +36,8 @@ npm start
 ```
 
 ## Things to do
-- [ ] Setup project
-- [ ] Initialize and connect database
+- [x] Setup project
+- [x] Initialize and connect database
 - [ ] Create register route
 - [ ] Create register front end
 - [ ] Create login route
