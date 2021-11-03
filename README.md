@@ -36,10 +36,10 @@ npm start
 ```
 
 ## Things to do
-- [x] Setup project
-- [x] Initialize and connect database
-- [x] Create register route
-- [x] Create register front end
+- [x] ~Setup project~
+- [x] ~Initialize and connect database~
+- [x] ~Create register route~
+- [x] ~Create register front end~
 - [ ] Create login route
 - [ ] Create login front end
 - [ ] Create front page, with api fetches
