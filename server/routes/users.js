@@ -38,5 +38,23 @@ router.post('/register',  async (req,res) => {
     }
 })
 
+//Login
+router.post('/login', async (req,res) => {
+    const user = await Users.find({email: req.body.email,})
+    //If user doesnt exist
+    if (user == null) {
+        return res.status(400).send('User does not exist')
+    }
+    //Compare passwords
+    try {
+      if (await bcrypt.compare(req.body.password,user[0].password)){
+          res.status(202).send({_id: user[0]._id})
+      }else{
+          res.status(400).send('Unsuccessful')
+      }
+    } catch (err) {
+        res.sendStatus(500)
+    }
+})
 
 module.exports = router

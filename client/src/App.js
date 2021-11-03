@@ -28,27 +28,25 @@ function App() {
         <div className="container">
             <Router>
                 <Switch>
-                    <Router>
-                        <Route path="/register" render={props => 
-                        (<Register handleLogin={handleLogin} setLogged={setLogged}/>)
-                        }/>
-                        </Router>
-
-                        <Router>
-                        <Route path="/login" render={props => 
-                        (<Login handleLogin={handleLogin} setLogged={setLogged}/>)
-                        }/>
-                        </Router>
-
-                        <Router>
-                        <Route path="/" render={props => 
-                        (<Main logged={logged} setLogged={setLogged}/>)
-                        }/>
-                        </Router>
                         
-                        <Route eact path="/404" component={NotFound} />
+                        <Route exact path="/" render={props => 
+                        (<Main handleLogin={handleLogin} setLogged={setLogged} logged={logged} handleLogout={handleLogout}/>)
+                        }/>
+
+                        <Route exact path="/register">
+                            {logged ? <Redirect to="/" /> :  <Route exact path ="/register" handleLogin={handleLogin} render={props => <Register {...props} handleLogin={handleLogin}/>}/> }
+                        </Route>
+
+                        <Route exact path="/login">
+                            {logged ? <Redirect to="/" /> :  <Route exact path ="/login" handleLogin={handleLogin} render={props => <Login {...props} handleLogin={handleLogin}/>}/> }
+                        </Route>
+
+                        <Route exact path="/404" component={NotFound} />
                         <Redirect to="/404"/>
+                       
+
                 </Switch>
+
             </Router>
         </div>
     )

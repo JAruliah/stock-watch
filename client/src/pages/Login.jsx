@@ -1,10 +1,14 @@
 import React from "react";
+import Form from '../components/Login/Form'
+import Header from "../components/Login/Header";
 
-function Login(){
+function Login(props){
     return (
         <div>
-            Login Page
+            <Header />
+            <Form handleLogin={props.handleLogin} />
         </div>
+        
     )
 }
 

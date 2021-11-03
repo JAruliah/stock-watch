@@ -40,8 +40,8 @@ npm start
 - [x] ~Initialize and connect database~
 - [x] ~Create register route~
 - [x] ~Create register front end~
-- [ ] Create login route
-- [ ] Create login front end
+- [x] Create login route
+- [x] Create login front end
 - [ ] Create front page, with api fetches
 - [ ] Create GET watchlist route
 - [ ] Create POST watchlist route
