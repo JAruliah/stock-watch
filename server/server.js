@@ -9,9 +9,13 @@ app.use(cors())
 
 //MIDDLEWARES
 app.use(express.json())
+
 //GET ROUTES
 const userRouter = require('./routes/users')
 app.use('/users',userRouter)
+
+const watchListRouter = require('./routes/watchlist')
+app.use('/watchlist',watchListRouter)
 
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECTION, () =>{

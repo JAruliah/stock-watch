@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import StockInfo from "./StockInfo";
 
-function Search(){
+// Get the data from API given the ticker symbol
+function Search(props){
     const [symbol, setSymbol] = useState('')
     const [price, setPrice] = useState('') 
     const [dividend, setDividend] = useState('')
@@ -12,7 +13,9 @@ function Search(){
     const [sector, setSector] = useState('')
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
+    const [divYield, setDivYield] = useState('')
 
+    // Handle submit
     function submitHandler(e){
         e.preventDefault()
         const stockTicker = e.target.symbol.value
@@ -25,6 +28,7 @@ function Search(){
                 setDescription(data['Description'])
                 setSector(data['Sector'])
                 setName(data['Name'])
+                setDivYield(data['DividendYield'])
             })
             setSymbol(stockTicker)
             const stockData = data[Object.keys(data)[1]]
@@ -43,9 +47,9 @@ function Search(){
     return(
         <form onSubmit={submitHandler}>
             <input name="symbol" autoComplete="off" required></input>
-            <button>Search</button>
+            <button type="submit">Search</button>
             <p>{message}</p>
-            {message === '' && description !=='' ? <StockInfo symbol={symbol} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
+            {message === '' && description !=='' ? <StockInfo handleWatchList={props.handleWatchList} symbol={symbol} divYield={divYield} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
         </form>
     )
 }

@@ -40,11 +40,11 @@ npm start
 - [x] ~Initialize and connect database~
 - [x] ~Create register route~
 - [x] ~Create register front end~
-- [x] Create login route
-- [x] Create login front end
-- [ ] Create front page, with api fetches
-- [ ] Create GET watchlist route
-- [ ] Create POST watchlist route
+- [x] ~Create login route~
+- [x] ~Create login front end~
+- [x] ~Create front page, with api fetches~
+- [x] ~Create GET watchlist route~
+- [x] ~Create POST watchlist route~
 - [ ] Create DELETE watchlist route
 - [ ] Style register page
 - [ ] Style login page
