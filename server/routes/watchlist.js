@@ -9,15 +9,18 @@ router.use(express.json())
 
 // get watchlist and name 
 router.get('/:id', async(req,res) => {
-    const user = await Users.find({_id:mongoose.Types.ObjectId(req.params.id)})
-    res.send({
-        firstName: user[0].firstName,
-        lastName:user[0].lastName,
-        watchlist :user[0].watchlist 
-    })
+    try{
+        const user = await Users.find({_id:mongoose.Types.ObjectId(req.params.id)})
+        res.send({
+            firstName: user[0].firstName,
+            lastName:user[0].lastName,
+            watchlist :user[0].watchlist 
+        })
+    }catch(err){res.sendStatus(500)}
+
 })
 
-//Post stock in the user collections given the userid in req.params
+//Post watchlist item in the watchlist array
 router.post('/:id', async (req,res) => {
     const stock = new Stock({
         symbol:req.body.symbol,
@@ -33,6 +36,17 @@ router.post('/:id', async (req,res) => {
     }catch(err){res.sendStatus(500)}
     
 })
+
+//Delete the watchlist item given the userid and watchlist item id
+router.delete('/:id',async (req,res)=>{
+    try{
+        const deletedItem = await Users.updateOne({_id: mongoose.Types.ObjectId(req.params.id)}, {$pull:{watchlist:{_id: mongoose.Types.ObjectId(req.body._id)}}})
+        res.json(deletedItem).send
+    }catch(err){res.sendStatus(500)}
+    
+})
+
+
 
 
 

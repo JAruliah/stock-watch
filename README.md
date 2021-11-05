@@ -45,7 +45,8 @@ npm start
 - [x] ~Create front page, with api fetches~
 - [x] ~Create GET watchlist route~
 - [x] ~Create POST watchlist route~
-- [ ] Create DELETE watchlist route
+- [x] Create DELETE watchlist route
+- [ ] Bug testing
 - [ ] Style register page
 - [ ] Style login page
 - [ ] Style front page

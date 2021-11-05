@@ -1,20 +1,27 @@
 import React from "react";
 
 function StockInfo(props){
+
     // Display info for the stock
-    // Option to add stock to watch list if signed in
+    // Option to add stock to watchlist if logged in
+
     const localId = window.localStorage.getItem('id')
     const userId = JSON.parse(localId)
+
+    // Add item to the watchlist and update the state of watchlist
     function handleWatchList(){
         fetch(`${process.env.REACT_APP_BASE_URL}watchlist/${userId._id}`, {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({symbol: props.symbol, open: props.open, low: props.low, high: props.high, close: props.close})
+            body: JSON.stringify({symbol: props.symbol.toUpperCase(), open: props.open, low: props.low, high: props.high, close: props.close})
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            props.setWatchList([...props.watchList, {_id:data[data.length -1]._id,symbol:props.symbol.toUpperCase(), open:props.open, low:props.low, high:props.high}])
+        })
+        .catch(err => console.log(err)) 
     }
 
     return (
@@ -28,7 +35,7 @@ function StockInfo(props){
             <p>Yield: {props.divYield}</p>
             <p>Sector: {props.sector}</p>
             <p>Description: {props.description}</p>
-            <button type="button" onClick={handleWatchList}>Add To WatchList</button>
+            {props.logged ? <button type="button" onClick={handleWatchList}>Add To WatchList</button>: null}
             
         </div>
     )

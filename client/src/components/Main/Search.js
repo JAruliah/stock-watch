@@ -15,7 +15,7 @@ function Search(props){
     const [message, setMessage] = useState('')
     const [divYield, setDivYield] = useState('')
 
-    // Handle submit
+    // Handle submit, get data and update the state of watchlist
     function submitHandler(e){
         e.preventDefault()
         const stockTicker = e.target.symbol.value
@@ -49,7 +49,7 @@ function Search(props){
             <input name="symbol" autoComplete="off" required></input>
             <button type="submit">Search</button>
             <p>{message}</p>
-            {message === '' && description !=='' ? <StockInfo handleWatchList={props.handleWatchList} symbol={symbol} divYield={divYield} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
+            {message === '' && description !=='' ? <StockInfo logged={props.logged} watchList={props.watchList} setWatchList={props.setWatchList} handleWatchList={props.handleWatchList} symbol={symbol} divYield={divYield} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
         </form>
     )
 }

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 //Register Form
 function Form(props){
-    //Set tate
+    //Set state
     const [email, setEmail] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
