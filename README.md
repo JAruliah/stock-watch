@@ -11,11 +11,20 @@ Project was made using the MERN stack. Users can search up stocks by their ticke
 #### Server 
 * Inside of server folder .env file must be created with contents as follows: DB_CONNECTION="your database connection"
 * to install all server dependencies run:
+
 ```
 cd server
 npm install
 ```
 #### Client
+* Inside of client folder .env file must be created with content as follows: 
+* REACT_APP_BASE_URL= "your base api url" 
+* REACT_APP_API_KEY= "your api key here"
+
+```
+cd client
+npm install
+```
 
 ### Executing program
 #### Server
@@ -45,7 +54,7 @@ npm start
 - [x] ~Create front page, with api fetches~
 - [x] ~Create GET watchlist route~
 - [x] ~Create POST watchlist route~
-- [x] Create DELETE watchlist route
+- [x] ~Create DELETE watchlist route~
 - [ ] Bug testing
 - [ ] Style register page
 - [ ] Style login page

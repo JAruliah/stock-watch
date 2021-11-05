@@ -14,6 +14,8 @@ function Search(props){
     const [name, setName] = useState('')
     const [message, setMessage] = useState('')
     const [divYield, setDivYield] = useState('')
+    const [shortPercent, setShortPercent] = useState('')
+    const [shortRatio, setShortRatio] = useState('')
 
     // Handle submit, get data and update the state of watchlist
     function submitHandler(e){
@@ -29,6 +31,8 @@ function Search(props){
                 setSector(data['Sector'])
                 setName(data['Name'])
                 setDivYield(data['DividendYield'])
+                setShortPercent(data['ShortPercentOutstanding'])
+                setShortRatio(data['ShortRatio'])
             })
             setSymbol(stockTicker)
             const stockData = data[Object.keys(data)[1]]
@@ -37,6 +41,7 @@ function Search(props){
             setOpen(stockData[Object.keys(stockData)[0]]["1. open"])
             setLow(stockData[Object.keys(stockData)[0]]["3. low"])
             setHigh(stockData[Object.keys(stockData)[0]]["2. high"])
+        
             setMessage('')
         })
         .catch(err => {
@@ -49,7 +54,7 @@ function Search(props){
             <input name="symbol" autoComplete="off" required></input>
             <button type="submit">Search</button>
             <p>{message}</p>
-            {message === '' && description !=='' ? <StockInfo logged={props.logged} watchList={props.watchList} setWatchList={props.setWatchList} handleWatchList={props.handleWatchList} symbol={symbol} divYield={divYield} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
+            {message === '' && description !=='' ? <StockInfo logged={props.logged} shortRatio={shortRatio} shortPercent={shortPercent} watchList={props.watchList} setWatchList={props.setWatchList} handleWatchList={props.handleWatchList} symbol={symbol} divYield={divYield} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
         </form>
     )
 }

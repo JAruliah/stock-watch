@@ -35,6 +35,8 @@ function StockInfo(props){
             <p>Yield: {props.divYield}</p>
             <p>Sector: {props.sector}</p>
             <p>Description: {props.description}</p>
+            <p>Short Percent: {props.shortPercent}</p>
+            <p>Short Ratio: {props.shortRatio}</p>
             {props.logged ? <button type="button" onClick={handleWatchList}>Add To WatchList</button>: null}
             
         </div>
