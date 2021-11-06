@@ -4,7 +4,7 @@ import Nav from "./Nav";
 function Header(props){
     return (
         <header>
-            <h1>Main Page</h1>
+            <h1 className="text-center" >Main Page</h1>
             <Nav logged={props.logged} handleLogout={props.handleLogout}/>
             
         </header>

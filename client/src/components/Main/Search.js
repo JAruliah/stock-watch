@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import StockInfo from "./StockInfo";
+import {MDBBtn, MDBInput} from 'mdb-react-ui-kit'
 
 // Get the data from API given the ticker symbol
 function Search(props){
@@ -46,9 +47,11 @@ function Search(props){
         })
     }
     return(
-        <form onSubmit={submitHandler}>
-            <input name="symbol" autoComplete="off" required></input>
-            <button type="submit">Search</button>
+        <form onSubmit={submitHandler} className="m-auto mt-5">
+            <div className="text-center mb-5">
+            <MDBInput className="mt-3 mb-3" name="symbol" autoComplete="off" contrast required></MDBInput>
+            <MDBBtn className="mt-1" color="secondary" type="submit">Search</MDBBtn>
+            </div>
             <p>{message}</p>
             {message === '' && description !=='' ? <StockInfo logged={props.logged} watchList={props.watchList} setWatchList={props.setWatchList} handleWatchList={props.handleWatchList} symbol={symbol} divYield={divYield} name={name} sector={sector} description={description} dividend={dividend} open={open} low={low} high={high} price={price}/> : null}
         </form>

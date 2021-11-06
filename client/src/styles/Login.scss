@@ -1,7 +1,11 @@
-.login .login-link{
-    border-bottom: 3px solid #b23cfd;
-    .form-outline.form-white{
-        width: 60%;
-        margin: auto;
+.login{
+    .login-link{
+        border-bottom: 3px solid #b23cfd;
+    }
+    form{
+        .form-outline {
+            width: 60%;
+            margin: auto;
+        }
     }
 }

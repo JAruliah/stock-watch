@@ -1,5 +1,5 @@
 import React from "react";
-
+import {MDBBtn} from 'mdb-react-ui-kit'
 function StockInfo(props){
 
     // Display info for the stock
@@ -31,7 +31,7 @@ function StockInfo(props){
     }
 
     return (
-        <div className="stock-info">
+        <div className="stock-info mb-5">
             <h3>{props.name} <span>{props.symbol.toUpperCase()}</span></h3>
             <p>Open: {props.open}</p>
             <p>Low: {props.low}</p>
@@ -41,7 +41,7 @@ function StockInfo(props){
             <p>Yield: {props.divYield}</p>
             <p>Sector: {props.sector}</p>
             <p>Description: {props.description}</p>
-            {props.logged ? <button type="button" onClick={handleWatchList}>Add To WatchList</button>: null}
+            {props.logged ? <MDBBtn color="success" type="button" onClick={handleWatchList}>Add To WatchList</MDBBtn>: null}
             
         </div>
     )

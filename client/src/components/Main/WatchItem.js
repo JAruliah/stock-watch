@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import {MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit'
 
 function WatchItem(props){
     //Remove an item from the watchlist state and the database
@@ -21,13 +22,13 @@ function WatchItem(props){
     }
 
     return (
-        <div className="watchlist-item" style={{display:'flex', justifyContent:'space-between'}}>
-            <p>{props.symbol}</p>
-            <p>{props.open}</p>
-            <p>{props.low}</p>
-            <p>{props.high}</p>
-            <p>{props.close}</p>
-            <button type="button" onClick={removeItem}>Remove</button>
+        <div className="watchlist-item mb-3" style={{display:'flex', justifyContent:'space-between'}}>
+                <p>{props.symbol}</p> 
+                <p>{props.open}</p>
+                <p>{props.low}</p>
+                <p>{props.high}</p>
+                <p>{props.close}</p>
+            <MDBBtn color="danger" type="button" onClick={removeItem}>Remove</MDBBtn>
         </div>
     )
 }
