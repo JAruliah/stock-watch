@@ -4,7 +4,7 @@ import Header from "../components/Login/Header";
 
 function Login(props){
     return (
-        <div>
+        <div className="login">
             <Header />
             <Form handleLogin={props.handleLogin} />
         </div>

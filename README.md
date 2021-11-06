@@ -55,9 +55,9 @@ npm start
 - [x] ~Create GET watchlist route~
 - [x] ~Create POST watchlist route~
 - [x] ~Create DELETE watchlist route~
-- [ ] Bug testing
-- [ ] Style register page
-- [ ] Style login page
+- [x] ~Bug testing~
+- [x] ~Style register page~
+- [x] ~Style login page~
 - [ ] Style front page
 - [ ] Style 404 page
 - [ ] Bug testing

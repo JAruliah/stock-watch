@@ -1,0 +1,33 @@
+@import './register.scss';
+@import './login.scss';
+body{
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    background-color: #212121;
+    color: white;
+}
+
+nav{
+    width: 60%;
+    margin: auto;
+    ul{
+        padding: 0;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+        li{
+            list-style: none;
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+a:hover{
+    color: #b23cfd;
+}
+.form-check{
+    width: 60%;
+    margin: auto;
+}

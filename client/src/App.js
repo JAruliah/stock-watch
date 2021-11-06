@@ -4,6 +4,7 @@ import Register from './pages/Register'
 import Main from "./pages/Main";
 import NotFound from "./pages/NotFound";
 import Login from './pages/Login'
+import './styles/main.css'
 
 
 // Main App

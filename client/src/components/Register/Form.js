@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { MDBBtn, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
 
 //Register Form
 function Form(props){
@@ -45,28 +46,33 @@ function Form(props){
             setMessage("Passwords do not match")
         }
     }
+    function clickHandler(event){
+        let x = document.getElementById("password");
+        let i = document.getElementById("passwordConfirm")
+        if (x.type === "password") {
+          x.type = "text";
+          i.type="text"
+        } else {
+          x.type = "password";
+          i.type = "password"
+        }
+    }
 
     return (
         //The register form
         <div>
             <form onSubmit={submitHandler}>  
-                    <label>Email
-                    <input type="text" name="email" value={email} maxLength="50" onChange={(e) => {setEmail(e.target.value)}} autoComplete="off" required />
-                    </label>
-                    <label>First Name
-                    <input type="text" name="firstName" value={firstName} maxLength="20" onChange={(e) => {setFirstName(e.target.value)}} autoComplete="off" required />
-                    </label>
-                    <label>Last Name
-                    <input type="text" name="lastName" value={lastName} maxLength="20" onChange={(e) => {setLastName(e.target.value)}} autoComplete="off" required />
-                    </label>
-                    <label>Password
-                    <input type="password" name="password" value={password} minLength="8" maxLength="20" onChange={(e) => {setPassword(e.target.value)}} autoComplete="off" required />
-                    </label>
-                    <label>Confirm Password
-                    <input type="password" name="password" value={passwordConfirm} minLength="8" maxLength="20" onChange={(e) => {setPasswordConfirm(e.target.value)}} autoComplete="off" required />
-                    </label>
-                    <button>Submit</button>
-                    <p>{message}</p>
+                    
+                    <MDBInput className="mt-3 mb-3" label="Email" type="text" name="email" value={email} maxLength="50" onChange={(e) => {setEmail(e.target.value)}} autoComplete="off"  contrast required />
+                    <MDBInput className="mt-3 mb-3" label="First Name" type="text" name="firstName" value={firstName} maxLength="20" onChange={(e) => {setFirstName(e.target.value)}} autoComplete="off"  contrast required />
+                    <MDBInput className="mt-3 mb-3" label="Last Name" type="text" name="lastName" value={lastName} maxLength="20" onChange={(e) => {setLastName(e.target.value)}} autoComplete="off"  contrast required />
+                    <MDBInput className="mt-3 mb-3" label="Password" id="password" type="password" name="password" value={password} minLength="8" maxLength="20" onChange={(e) => {setPassword(e.target.value)}} autoComplete="off"  contrast required />
+                    <MDBInput className="mt-3 mb-3" label="Confirm Password" id="passwordConfirm" type="password" name="password" value={passwordConfirm} minLength="8" maxLength="20" onChange={(e) => {setPasswordConfirm(e.target.value)}} autoComplete="off"  contrast required />
+                    <MDBCheckbox label="Show passwords" type="checkbox" onClick={clickHandler} />
+                    <div className="text-center">
+                    <MDBBtn className="mt-1" color="secondary">Sign Up</MDBBtn>
+                    </div>
+                    <p style={{color:"#f72052"}} className="m-5 text-center" >{message}</p>
                  
             </form>
         </div>

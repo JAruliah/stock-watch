@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { MDBBtn, MDBInput, MDBCheckbox } from 'mdb-react-ui-kit';
 
 function Form(props){
     const [email, setEmail] = useState("")
@@ -46,15 +47,13 @@ function Form(props){
 
     return(
         <form onSubmit={submitHandler}>
-            <label>Email
-            <input  type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength="100" autoComplete="off" required/>
-            </label>
-            <label>Password
-            <input  type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} maxLength="25" autoComplete="off" required/>
-            </label>
-            <label><input type="checkbox" onClick={clickHandler} />Show Password</label>
-            <button>Login</button>
-            <p name="message">{message}</p>
+            <MDBInput  className="mt-3 mb-3" label="Email" type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} maxLength="100" autoComplete="off" contrast required/>
+            <MDBInput className="mt-3 mb-3" label="Password" type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} maxLength="25" autoComplete="off" contrast required/>
+            <MDBCheckbox label="Show password" type="checkbox" onClick={clickHandler} />
+            <div className="text-center">
+            <MDBBtn className="mt-1" color="secondary">Login</MDBBtn>
+            </div>
+            <p style={{color:'#f72052'}} className="m-5 text-center" name="message">{message}</p>
         </form>
     )
 }
