@@ -10,6 +10,11 @@ function StockInfo(props){
 
     // Add item to the watchlist and update the state of watchlist
     function handleWatchList(){
+        for (let i =0; i< props.watchList.length;i++){
+            if(props.watchList[i].symbol.toUpperCase() === props.symbol.toUpperCase()){
+                return
+            }
+        }
         fetch(`${process.env.REACT_APP_BASE_URL}watchlist/${userId._id}`, {
             method:'POST',
             headers:{
@@ -22,6 +27,7 @@ function StockInfo(props){
             props.setWatchList([...props.watchList, {_id:data[data.length -1]._id,symbol:props.symbol.toUpperCase(), open:props.open, low:props.low, high:props.high}])
         })
         .catch(err => console.log(err)) 
+
     }
 
     return (
@@ -35,8 +41,6 @@ function StockInfo(props){
             <p>Yield: {props.divYield}</p>
             <p>Sector: {props.sector}</p>
             <p>Description: {props.description}</p>
-            <p>Short Percent: {props.shortPercent}</p>
-            <p>Short Ratio: {props.shortRatio}</p>
             {props.logged ? <button type="button" onClick={handleWatchList}>Add To WatchList</button>: null}
             
         </div>
