@@ -19,7 +19,9 @@ npm install
 ```
 #### Client
 * Inside of client folder .env file must be created with content as follows: 
+
 REACT_APP_BASE_URL= "your base api url" 
+
 REACT_APP_API_KEY= "your api key here"
 
 * SCSS files need to be compiled, you can run:
