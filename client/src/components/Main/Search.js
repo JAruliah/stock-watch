@@ -39,7 +39,7 @@ function Search(props){
     return(
         <form onSubmit={submitHandler} className="m-auto mt-5">
             <div className="text-center mb-5">
-            <MDBInput className="mt-3 mb-3" name="symbol" autoComplete="off" contrast required></MDBInput>
+            <MDBInput label="Stock ticker symbol" className="mt-3 mb-3" name="symbol" autoComplete="off" contrast required></MDBInput>
             <MDBBtn className="mt-1" color="secondary" type="submit">Search</MDBBtn>
             <p>{message}</p>
             </div>

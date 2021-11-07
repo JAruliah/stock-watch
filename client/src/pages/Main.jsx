@@ -30,7 +30,7 @@ function Main(props){
         <div className="main"> 
             <Header logged={props.logged} handleLogout={props.handleLogout}/>
             <Search setWatchList={setWatchList} watchList={watchList} logged={props.logged}/>
-            {props.logged ? <WatchList watchList={watchList} setWatchList={setWatchList} logged={props.logged}/>: <p>Please Login to add to watchlist</p>}
+            {props.logged ? <WatchList watchList={watchList} setWatchList={setWatchList} logged={props.logged}/>: <p style={{textAlign:'center'}}>Please Login to add to watchlist</p>}
 
         </div>
     )

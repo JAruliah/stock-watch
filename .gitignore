@@ -6,8 +6,8 @@ requests.http
 #Client
 /client/.env
 /client/node_modules
-/client/src/styles/*.css
-/client/src/styles/*.map
+/client/src/styles/css
+
 
 
 #misc
