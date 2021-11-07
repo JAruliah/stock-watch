@@ -6,6 +6,7 @@ const StockSchema = mongoose.Schema({
     open:Number,
     low:Number,
     high:Number,
+    change:Number
 })
 
 module.exports = mongoose.model('Stock',StockSchema)

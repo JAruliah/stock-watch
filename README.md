@@ -4,7 +4,7 @@ This is a stock watcher, returns data about a given stock when a valid stock tic
 
 ## Description
 
-Project was made using the MERN stack. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist features.
+Project was made using the MERN stack. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist.
 ## Getting Started
 
 ### Installing/Setup
@@ -20,6 +20,15 @@ npm install
 * Inside of client folder .env file must be created with content as follows: 
 * REACT_APP_BASE_URL= "your base api url" 
 * REACT_APP_API_KEY= "your api key here"
+
+* SCSS files need to be compiled, you can run:
+
+```
+cd /client
+npm run scss
+```
+
+* To instakk all dependencies run:
 
 ```
 cd client
@@ -58,7 +67,7 @@ npm start
 - [x] ~Bug testing~
 - [x] ~Style register page~
 - [x] ~Style login page~
-- [ ] Style front page
+- [x] Style front page
 - [ ] Style 404 page
 - [ ] Bug testing
 - [ ] Deploy project :)

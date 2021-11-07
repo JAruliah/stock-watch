@@ -1,17 +1,33 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {MDBBtn} from 'mdb-react-ui-kit'
+// Display info for the stock
 function StockInfo(props){
+    // Get most recent stock prices
+    const [close,setClose] = useState('')
+    const [prevClose, setPrevClose] = useState('')
+    const [open, setOpen] = useState('')
+    const [low, setLow] = useState('')
+    const [high, setHigh] = useState('') 
+    const [change, setChange] = useState('')
 
-    // Display info for the stock
     // Option to add stock to watchlist if logged in
-
     const localId = window.localStorage.getItem('id')
     const userId = JSON.parse(localId)
+
+    // Set state of prices everytime props change
+    useEffect(() => {
+        setClose(props.stockPrices["Time Series (Daily)"][Object.keys(props.stockPrices["Time Series (Daily)"])[0]]['4. close'])
+        setPrevClose(props.stockPrices["Time Series (Daily)"][Object.keys(props.stockPrices["Time Series (Daily)"])[1]]['4. close'])
+        setOpen(props.stockPrices["Time Series (Daily)"][Object.keys(props.stockPrices["Time Series (Daily)"])[0]]['1. open'])
+        setLow(props.stockPrices["Time Series (Daily)"][Object.keys(props.stockPrices["Time Series (Daily)"])[0]]['3. low'])
+        setHigh(props.stockPrices["Time Series (Daily)"][Object.keys(props.stockPrices["Time Series (Daily)"])[0]]['2. high'])
+        setChange(percentChange(prevClose, close))
+    }, [props, prevClose, close])
 
     // Add item to the watchlist and update the state of watchlist
     function handleWatchList(){
         for (let i =0; i< props.watchList.length;i++){
-            if(props.watchList[i].symbol.toUpperCase() === props.symbol.toUpperCase()){
+            if(props.watchList[i].symbol.toUpperCase() === props.stockInfo.Symbol.toUpperCase()){
                 return
             }
         }
@@ -20,28 +36,70 @@ function StockInfo(props){
             headers:{
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({symbol: props.symbol.toUpperCase(), open: props.open, low: props.low, high: props.high, close: props.close})
+            body: JSON.stringify({symbol: props.stockInfo.Symbol.toUpperCase(), open: open, low: low, high: high, close: close, change:change})
         })
         .then(response => response.json())
         .then(data => {
-            props.setWatchList([...props.watchList, {_id:data[data.length -1]._id,symbol:props.symbol.toUpperCase(), open:props.open, low:props.low, high:props.high}])
+            props.setWatchList([...props.watchList, {_id:data[data.length -1]._id,symbol:props.stockInfo.Symbol.toUpperCase(), open:open, low:low, high:high, close:close, change:change}])
         })
         .catch(err => console.log(err)) 
 
     }
 
+    // Add k,m,b,t to large numbers 
+    function numberFormat(num) {
+        if (num >= 1000000000) {
+           return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+        }
+        if (num >= 1000000) {
+           return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+        }
+        if (num >= 1000) {
+           return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+        }
+        return num;
+   }
+
+    // Calculate the percent change of the current and previous close prices
+   function percentChange(a, b) {
+    let percent;
+    if(b !== 0) {
+        if(a !== 0) {
+            percent = (b - a) / a * 100;
+        } else {
+            percent = b * 100;
+        }
+    } else {
+        percent = - a * 100;            
+    }       
+    return Math.round(percent * 100) / 100
+}
+
     return (
+        
         <div className="stock-info mb-5">
-            <h3>{props.name} <span>{props.symbol.toUpperCase()}</span></h3>
-            <p>Open: {props.open}</p>
-            <p>Low: {props.low}</p>
-            <p>High: {props.high}</p>
-            <p>Closing Price: ${props.price}</p>
-            <p>Dividend: {props.dividend}</p>
-            <p>Yield: {props.divYield}</p>
-            <p>Sector: {props.sector}</p>
-            <p>Description: {props.description}</p>
+            <h3 className="text-center pb-3">{props.stockInfo.Name} {`(${props.stockInfo.Symbol}) ${change}%`} </h3>
+            <div className="data d-flex justify-content-around pb-3">
+                <div>
+                    <p><span>Close:</span> ${close}</p>
+                    <p><span>Open:</span> ${open}</p>
+                    <p><span>Low:</span> ${low}</p>
+                    <p><span>High:</span> ${high}</p>
+                    {parseFloat(props.stockInfo.DividendYield) === 0 ? <p><span>Dividend:</span> -</p>:<p><span>Dividend:</span> {(Math.round(props.stockInfo.DividendYield*100 * 100) / 100).toFixed(2)}%</p>}
+                    <p><span>Exchange:</span> {props.stockInfo.Exchange}</p>
+                </div>
+                <div>
+                    <p><span>Sector:</span> {props.stockInfo.Sector}</p>
+                    <p><span>Mkt cap:</span> ${numberFormat(props.stockInfo.MarketCapitalization)}</p>
+                    {isNaN(parseFloat(props.stockInfo.PERatio)) ? <p><span>P/E:</span> -</p> : <p><span>P/E:</span> {props.stockInfo.PERatio}</p>}
+                    <p><span>52W high:</span> ${props.stockInfo['52WeekHigh']}</p>
+                    <p><span>52W low:</span> ${props.stockInfo['52WeekLow']}</p>
+                    {props.stockInfo.EPS === undefined ? <p><span>EPS:</span> -</p>:<p><span>EPS:</span> ${props.stockInfo.EPS}</p>}
+                </div>
+            </div>
+            <div className="text-center">
             {props.logged ? <MDBBtn color="success" type="button" onClick={handleWatchList}>Add To WatchList</MDBBtn>: null}
+            </div>
             
         </div>
     )

@@ -28,6 +28,7 @@ router.post('/:id', async (req,res) => {
         open:req.body.open,
         low:req.body.low,
         high:req.body.high,
+        change:req.body.change
     })
     try{
         const userUpdate = await Users.updateOne({_id:mongoose.Types.ObjectId(req.params.id)},{$push:{watchlist:stock}})
