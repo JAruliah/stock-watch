@@ -56,6 +56,11 @@ npm run start
 cd ../client
 npm start
 ```
+* To create a production ready build:
+```
+cd ../client
+npm run build
+```
 
 ## Things to do
 - [x] ~Setup project~
