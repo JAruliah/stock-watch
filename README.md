@@ -1,4 +1,5 @@
 # Stock Watch
+![stock-watch](https://user-images.githubusercontent.com/71105258/140875388-99cfcebe-c342-4500-8311-faa58317ec73.png)
 ### Live Site: https://stonka.jaruliah.me/
 This is a stock watcher, returns data about a given stock when a valid stock ticker symbol is presented
 
@@ -12,6 +13,7 @@ Project was made using the MERN stack. Users can search up stocks by their ticke
 * Inside of server folder .env file must be created with contents as follows: 
 
     DB_CONNECTION="your database connection"
+
 * to install all server dependencies run:
 
 ```
