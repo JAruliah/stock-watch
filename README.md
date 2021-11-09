@@ -1,12 +1,14 @@
 # Stock Watch
 ![stock-watch](https://user-images.githubusercontent.com/71105258/140862924-136de065-7932-4874-bf2d-cfc57e6ba509.png)
 
+There is a rate limit of 2 requests a minute with the free api key
+
 ### Live Site: https://stonka.jaruliah.me/
 This is a stock watcher, returns data about a given stock when a valid stock ticker symbol is presented
 
 ## Description
 
-Project was made using the MERN stack. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist.
+Project was made using the MERN stack. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist. 
 ## Getting Started
 
 ### Installing/Setup
@@ -82,6 +84,9 @@ npm run build
 - [x] ~Style 404 page~
 - [x] ~Bug testing~
 - [x] ~Deploy project :)~
+- [ ] Live stock ticker
+- [ ] More info for stonks with premium key?
+- [ ] Crypto?
 
 
 
