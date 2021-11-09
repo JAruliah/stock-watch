@@ -5,7 +5,7 @@ This is a stock watcher, returns data about a given stock when a valid stock tic
 
 ## Description
 
-Project was made using the MERN stack. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist.
+Project was made using the MERN stack using Material Design Bootstrap and SCSS for styling. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist.
 ## Getting Started
 
 ### Installing/Setup
@@ -82,6 +82,13 @@ npm run build
 - [x] ~Style 404 page~
 - [x] ~Bug testing~
 - [x] ~Deploy project :)~
+
+## Possible new features?
+ - [ ] Purchase premium key for more data?
+ - [ ] Live stock ticker price?
+ - [ ] Crypto?
+ - [ ] ???
+  
 
 
 
