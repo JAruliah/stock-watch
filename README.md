@@ -1,4 +1,6 @@
 # Stock Watch
+![stock-watch](https://user-images.githubusercontent.com/71105258/140862924-136de065-7932-4874-bf2d-cfc57e6ba509.png)
+
 ### Live Site: https://stonka.jaruliah.me/
 This is a stock watcher, returns data about a given stock when a valid stock ticker symbol is presented
 
