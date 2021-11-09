@@ -1,11 +1,11 @@
 # Stock Watch
 ![stock-watch](https://user-images.githubusercontent.com/71105258/140875388-99cfcebe-c342-4500-8311-faa58317ec73.png)
 ### Live Site: https://stonka.jaruliah.me/
-This is a stock watcher, returns data about a given stock when a valid stock ticker symbol is presented
+This is a stock, returns data about a given stock when a valid stock ticker symbol is presented. Logged in users can add to watchlist.
 
 ## Description
 
-Project was made using the MERN stack using Material Design Bootstrap and SCSS for styling. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist.
+Project was made using the MERN stack using Material Design Bootstrap and SCSS for styling. This project utilizes an external API to fetch the data https://www.alphavantage.co/. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist. Currently a free api key is being used, with a limit of 2 requests a minute and 500 requests daily.
 ## Getting Started
 
 ### Installing/Setup
