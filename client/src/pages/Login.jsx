@@ -5,8 +5,10 @@ import Header from "../components/Login/Header";
 function Login(props){
     return (
         <div className="login">
-            <Header />
-            <Form handleLogin={props.handleLogin} />
+             <div className="container">
+                <Header />
+                <Form handleLogin={props.handleLogin} />
+            </div>
         </div>
         
     )

@@ -2,7 +2,6 @@ import React from "react";
 import WatchItem from "./WatchItem";
 function WatchList(props){
     //Displays all watchlist items 
-    console.log(props)
     return (
         <div className="watchlist">
             <h3 className="mb-4">WatchList</h3>

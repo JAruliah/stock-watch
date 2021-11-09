@@ -33,7 +33,7 @@ function WatchItem(props){
                 </div> 
                 <div>
                     <p className="watchlist-heading">Change</p>
-                    <p>{props.change}%</p>
+                    {props.change < 0 ? <p style={{color:'red'}}>{props.change}%</p>:<p style={{color:'green'}}>{props.change}%</p>}
                 </div> 
                 <div style={{width:'fit-content', margin:'auto 0'}}>
                  <MDBBtn color="danger" type="button" onClick={removeItem}>Remove</MDBBtn>

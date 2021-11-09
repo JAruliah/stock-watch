@@ -3,6 +3,7 @@ import Header from '../components/Main/Header'
 import Search from "../components/Main/Search";
 import WatchList from "../components/Main/WatchList";
 
+
 function Main(props){
     
     const [watchList, setWatchList] = useState([])
@@ -29,8 +30,10 @@ function Main(props){
     return (
         <div className="main"> 
             <Header logged={props.logged} handleLogout={props.handleLogout}/>
+            <div className="container">
             <Search setWatchList={setWatchList} watchList={watchList} logged={props.logged}/>
-            {props.logged ? <WatchList watchList={watchList} setWatchList={setWatchList} logged={props.logged}/>: <p style={{textAlign:'center'}}>Please Login to add to watchlist</p>}
+            {props.logged ? <WatchList watchList={watchList} setWatchList={setWatchList} logged={props.logged}/>: <p style={{textAlign:'center'}}>* Please Login to add to watchlist</p>}
+            </div>
 
         </div>
     )

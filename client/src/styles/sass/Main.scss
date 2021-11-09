@@ -4,7 +4,33 @@ body{
     font-family: Roboto, Helvetica, Arial, sans-serif;
     background-color: #212121;
     color: white;
+    height: 100vh;
+}
+.logo{
+    width: fit-content;
+    height: 8rem;
+    margin: auto;
+}
 
+
+.main {
+    header{
+        background-color: rgba(49, 49, 49, 0.808);
+        width: 100%;
+        padding: .5rem;
+        div{
+            padding:0 1rem;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            nav{
+                width: fit-content;
+                margin: 0;
+                margin:auto 0;
+            }
+        }
+
+    }
 }
 
 nav{
@@ -41,6 +67,12 @@ a:hover{
     span{
         color: gray;
     }
+    .filter-green{
+        filter: invert(28%) sepia(81%) saturate(1673%) hue-rotate(93deg) brightness(92%) contrast(105%);
+    }
+    .filter-red{
+        filter: invert(16%) sepia(100%) saturate(7292%) hue-rotate(9deg) brightness(104%) contrast(119%);
+    }
 }
 
 .stock-info{
@@ -61,3 +93,4 @@ a:hover{
         }
     }
 }
+

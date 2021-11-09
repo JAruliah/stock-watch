@@ -6,8 +6,10 @@ import Header from "../components/Register/Header";
 function Register(props){
     return (
         <div className="register">
-            <Header />
-            <Form handleLogin={props.handleLogin} setLogged={props.setLogged}/>
+            <div className="container">
+                <Header />
+                <Form handleLogin={props.handleLogin} setLogged={props.setLogged}/>
+            </div>
         </div>
     )
 

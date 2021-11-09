@@ -78,7 +78,13 @@ function StockInfo(props){
     return (
         
         <div className="stock-info mb-5">
-            <h3 className="text-center pb-3">{props.stockInfo.Name} {`(${props.stockInfo.Symbol}) ${change}%`} </h3>
+            <h3 className="text-center pb-3">{props.stockInfo.Name} {`(${props.stockInfo.Symbol}) `}{change>0? <span style={{color:'green'}}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="filter-green" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M18.655 10.405a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06l4.97-4.97v14.44a.75.75 0 001.5 0V5.435l4.97 4.97a.75.75 0 001.06 0z"></path></svg>{`${change}%`}
+                </span>:
+                <span style={{color:'red'}}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="filter-red" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M4.97 13.22a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 10-1.06-1.06l-4.97 4.97V3.75a.75.75 0 00-1.5 0v14.44l-4.97-4.97a.75.75 0 00-1.06 0z"></path></svg>{`${change}%`}
+                </span>}
+                </h3>
             <div className="data d-flex justify-content-around pb-3">
                 <div>
                     <p><span>Close:</span> ${close}</p>

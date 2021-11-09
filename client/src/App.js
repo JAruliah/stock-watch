@@ -26,7 +26,7 @@ function App() {
       }
     // React Router Dom for all other pages
     return(
-        <div className="container">
+        <div>
             <Router>
                 <Switch>
                         

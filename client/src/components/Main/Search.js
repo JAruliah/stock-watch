@@ -22,7 +22,7 @@ function Search(props){
             .then(data => {
                 setStockInfo(data)
                 if (data["Symbol"] === undefined){
-                    setMessage("Invalid Stock Ticker or API rate limit exceeded, please wait a minute and try again)")
+                    setMessage("Invalid Stock Ticker or API rate limit exceeded, please wait a minute and try again")
                 }
                 else{
                     setMessage('')

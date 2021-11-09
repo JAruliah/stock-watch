@@ -76,9 +76,9 @@ npm run build
 - [x] ~Bug testing~
 - [x] ~Style register page~
 - [x] ~Style login page~
-- [x] Style front page
-- [ ] Style 404 page
-- [ ] Bug testing
+- [x] ~Style front page~
+- [x] ~Style 404 page~
+- [x] ~Bug testing~
 - [ ] Deploy project :)
 
 
