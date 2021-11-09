@@ -1,5 +1,5 @@
 # Stock Watch
-
+### Live Site: https://stonka.jaruliah.me/
 This is a stock watcher, returns data about a given stock when a valid stock ticker symbol is presented
 
 ## Description
@@ -79,7 +79,7 @@ npm run build
 - [x] ~Style front page~
 - [x] ~Style 404 page~
 - [x] ~Bug testing~
-- [ ] Deploy project :)
+- [x] ~Deploy project :)~
 
 
 
