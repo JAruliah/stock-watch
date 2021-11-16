@@ -5,7 +5,16 @@ This is a stock, returns data about a given stock when a valid stock ticker symb
 
 ## Description
 
-Project was made using the MERN stack using Material Design Bootstrap and SCSS for styling. This project utilizes an external API to fetch the data https://www.alphavantage.co/. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist. Currently a free api key is being used, with a limit of 2 requests a minute and 500 requests daily.
+This project utilizes an external API to fetch the data https://www.alphavantage.co/. Users can search up stocks by their ticker symbols and be given information about that stock. Users have an option to create a profile so that they can use the watchlist. The user is able to add and remove items from their watchlist. Currently a free api key is being used, with a limit of 2 requests a minute and 500 requests daily.
+
+## Built With
+- React
+- Nodejs
+- Express
+- MongoDB
+- SCSS
+- Material Design Bootstrap
+
 ## Getting Started
 
 ### Installing/Setup
