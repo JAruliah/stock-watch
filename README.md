@@ -14,6 +14,7 @@ This project utilizes an external API to fetch the data https://www.alphavantage
 - MongoDB
 - SCSS
 - Material Design Bootstrap
+- Hosted on NGINX VPS
 
 ## Getting Started
 
