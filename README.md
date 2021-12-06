@@ -1,4 +1,4 @@
-# Stock Watch
+# Stonka
 ![stock-watch](https://user-images.githubusercontent.com/71105258/140875388-99cfcebe-c342-4500-8311-faa58317ec73.png)
 ### Live Site: https://stonka.jaruliah.me/
 This is a stock, returns data about a given stock when a valid stock ticker symbol is presented. Logged in users can add to watchlist.
