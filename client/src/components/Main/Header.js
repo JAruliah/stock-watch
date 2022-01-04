@@ -7,7 +7,7 @@ function Header(props){
             <div>
                 <div className="logo-heading" style={{margin:'0'}}>
                     <img  src="img/logo.png" alt="logo" width="40" height="40"/>
-                    <h1 style={{marginLeft:'.5rem'}}>Stonkah</h1>
+                    <h1 style={{marginLeft:'.5rem'}}>Stonka</h1>
                 </div>
                 <Nav logged={props.logged} handleLogout={props.handleLogout}/>
             </div>
