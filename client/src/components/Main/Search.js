@@ -14,7 +14,7 @@ function Search(props){
         e.preventDefault()
         const stockTicker = e.target.symbol.value
 
-        fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${stockTicker}&apikey=${process.env.REACT_APP_API_KEY}`)
+        fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stockTicker}&apikey=${process.env.REACT_APP_API_KEY}`)
         .then(response => response.json())
         .then(data => {
             fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockTicker}&apikey=${process.env.REACT_APP_API_KEY}`)
